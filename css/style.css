@@ -15,6 +15,7 @@ body {
 .Pop_Growth {
     position: absolute;
     z-index: 300;
+    pointer-events: none;
 }
 
 

@@ -9,6 +9,7 @@ $(function() {
 
     var map = L.map('map', {
         zoomControl: true
+        //autoZIndex: false
     });
 
     map.setView([lat, lng], mapzoom);
@@ -359,11 +360,6 @@ map.on('zoomend', function(){
         map.addLayer(Land_Use_Changes);
     }
 }); 
-
-map.on("layeradd", function (event) {
-  Land_Use_Changes.bringToFront();
-});
-
 
 
 //function to style the polygon based on categories
