@@ -360,6 +360,10 @@ map.on('zoomend', function(){
     }
 }); 
 
+map.on("layeradd", function (event) {
+  Land_Use_Changes.bringToFront();
+});
+
 
 
 //function to style the polygon based on categories
@@ -438,6 +442,9 @@ map.on('zoomend', function(){
     }
 });
 
+/*map.on("layeradd", function (event) {
+  Pop_Growth.bringToBack();
+});*/
 
 
 var oldId;
