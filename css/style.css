@@ -7,16 +7,17 @@ body {
     height: calc(100vh - 56px);
 }
 
+.Pop_Growth {
+    position: absolute;
+    z-index: 300;
+}
+
 .Land_Use_Changes {
     position: absolute;
     z-index: 500;
 }
 
-.Pop_Growth {
-    position: absolute;
-    z-index: 300;
-    pointer-events: none;
-}
+
 
 
 

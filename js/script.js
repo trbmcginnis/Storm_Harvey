@@ -43,6 +43,12 @@ $(function() {
     });
 });
 
+var Land = map.createPane("Land")
+var Popul = map.createPane("Popul")
+
+Land.style.zIndex = 500
+Popul.style.zIndex = 400
+
 
 var HomeControl =  L.Control.extend({
 
@@ -346,10 +352,12 @@ var Land_Use_Changes = L.esri.featureLayer({
         fillOpacity: .8,
         weight: .5,
         color: 'white',
-        //pane: Land_Use_Pane
+        pane: 'Land'
         }
     }
+
 })
+
 
 //function to add or remove layer based on zoom level
 map.on('zoomend', function(){
@@ -358,8 +366,11 @@ map.on('zoomend', function(){
     } else {
         console.log("Polygon Layer Active");
         map.addLayer(Land_Use_Changes);
+
     }
 }); 
+
+
 
 
 //function to style the polygon based on categories
@@ -423,7 +434,7 @@ var Pop_Growth = L.esri.featureLayer({
         weight: 1,
         color: 'purple',
         fillOpacity: 0,
-        //pane: Pop_Growth_Pane
+        pane: 'Popul'
     }
 }
 })
@@ -437,6 +448,8 @@ map.on('zoomend', function(){
         map.addLayer(Pop_Growth);
     }
 });
+
+
 
 /*map.on("layeradd", function (event) {
   Pop_Growth.bringToBack();
@@ -458,7 +471,10 @@ var oldId;
       weight: 3,
       opacity: 1
     });
+
   });
+
+
 
 
 
